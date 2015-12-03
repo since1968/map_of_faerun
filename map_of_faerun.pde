@@ -4,6 +4,7 @@
 // for ease just draw grid in the visible portion of the map
 
 PImage img ; // declare variable of type PImage
+PImage imgMiles ;
 
 // load image at Sword Coast
 int mapX = -300;
@@ -17,11 +18,12 @@ void setup() {
   stroke(153);
   strokeWeight(1);
   img = loadImage("faerun.jpg");  // load image into program
+  // display image at its actual size at point x,y
+  image(img, mapX, mapY);
+  imgMiles = loadImage("scale.jpg");
 }
 
 void draw() {
-  // display image at its actual size at point x,y
-  image(img, mapX, mapY);
   for(int i=10; i < width; i += 10) {
     if((i % 150) == 0) {
       stroke(255);
@@ -33,6 +35,29 @@ void draw() {
     if((i % 150) == 0) {
       stroke(255);
       line(0, i, width, i);
+    }
+  }
+  
+  // load scale
+  image(imgMiles, width - 600, height - 60);
+
+  
+}
+
+// for moving the map. not functional yet
+void keyPressed() {
+  if (key==CODED) {
+    if(keyCode==LEFT) {
+      print("left");
+    } 
+    else if(keyCode==RIGHT) {
+      print("right");
+    }
+    else if(keyCode==UP) {
+      print("up");
+    } 
+    else if(keyCode==DOWN) {
+      print("down");
     }
   }
 }
