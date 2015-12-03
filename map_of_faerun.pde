@@ -30,6 +30,8 @@ void setup() {
 }
 
 void draw() {
+  
+  /* grid lines
   for(int i=10; i < width; i += 10) {
     if((i % 150) == 0) {
       stroke(255);
@@ -43,6 +45,8 @@ void draw() {
       line(0, i, width, i);
     }
   }
+  
+  */
   
   // load scale
   image(imgMiles, width - 600, height - 60);
@@ -76,7 +80,8 @@ void mousePressed() {
  //   textAlign(CENTER);
  //   text("point 2 ("+x2+", "+y2+")",x2, y2+20);
     stroke(133, 37, 40);
-    // strokeWeight(4);
+    strokeWeight(4);
+    strokeCap(ROUND);
     line(x1,y1,x2,y2);
     distance = calculateDist(x1, y1, x2, y2);
     // textAlign(CENTER);
