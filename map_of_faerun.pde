@@ -14,6 +14,7 @@ int sizeY = 1800;
 
 // variables for distance
 float distance;
+float cumulative;
 int x1, y1, x2, y2;
 int mouseCount = 0;
 float miles;
@@ -93,10 +94,11 @@ void mousePressed() {
   // println(mouseCount);
   miles = distance * .8;
   days = miles / walkingSpeed;
-  
+  cumulative += miles;
   if (mouseCount == 0 ) {
     println("Distance: " + round(miles) + " miles");
     println("That's about " + round(days) + " days on foot.");
+    println("Cumulative distance: " + round(cumulative) + " miles.");
   }
 }
  
