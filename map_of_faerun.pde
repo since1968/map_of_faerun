@@ -17,6 +17,8 @@ float distance;
 int x1, y1, x2, y2;
 int mouseCount = 0;
 float miles;
+float walkingSpeed = 15 ; // miles per day
+float horseSpeed = walkingSpeed * 2;
 float days;
 
 void setup() {
@@ -90,7 +92,7 @@ void mousePressed() {
   // println(abs(x2-x1)+", "+abs(y2-y1));
   // println(mouseCount);
   miles = distance * .8;
-  days = miles / 15;
+  days = miles / walkingSpeed;
   
   if (mouseCount == 0 ) {
     println("Distance: " + round(miles) + " miles");
